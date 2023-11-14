@@ -1,0 +1,111 @@
+@font-face{
+  font-family: 'Roboto Flex', sans-serif;
+  src: url ('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz@8..144&display=swap');
+}
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: 'Roboto Flex', sans-serif;
+}
+
+body{
+  background-image: url('./assests/background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+header{
+  width: 100%;
+  height: 10%;
+}
+header img{
+  /* width: 80%; */
+  height: 50px;
+  object-fit: contain;   
+}
+main {
+  height: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background-size: contain;
+}
+.container{
+  height: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 10px;
+}
+figure {
+  width: 200px;
+  height: 300px;
+  background-color: #616161;
+  border-color: black;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 10px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  color: rgb(239, 237, 235);
+  }
+img {
+  object-fit: contain;
+  object-position: center;
+  width: 100%;
+  height: 250px;
+}
+h2{
+  background-color: #232323;
+  height: 20px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  padding-left: 5px;
+  
+}
+h2 span{
+  margin-right: 5px;
+}
+.pokemon_type {
+  background-color: #232323;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  font-size: 14px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px; 
+  border-style: none;
+}
+.pokemon_type p{
+  width: 100px;
+}
+.pokemon_type span{
+  width: 30px;
+  margin-right: 2px;
+}
+
+  /* Resto de reglas en orden creciente */
+@media (min-width: 576px) {
+  p {
+      /* font-size: 14px; */
+  }
+}
+@media (min-width: 768px) {
+  p {
+      /* font-size: 16px; */
+  }
+}
+@media (min-width: 992px) {
+  p {
+      /* font-size: 20px; */
+  }
+}
+@media (min-width: 1200px) {
+  p {
+      /* font-size: 24px; */
+  }
+}
