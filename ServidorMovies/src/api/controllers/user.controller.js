@@ -16,11 +16,33 @@ const postUserRegister = (req, res, next) => {
     })(req);
 }
 
-// const postUserLogin = () => {
+const postUserLogin = (req, res, next) => {
+    passport.authenticate('login', (error, user) => {
+        if (error) return next(error)
 
-// };
+        req.logIn(user, (error) => {
+            if (error) {
+                return next(error);
+            }
+            return res.status(200).json(user)
+        });
+    })(req);
+};
 
-// const postUserLogout =() => {
+const postUserLogout =(req, res, next) => {
+    if (req.user) {
+        req.logout(error => {
+          if (error) {
+            return next(error);
+          }
+          req.session.destroy(() => {
+            res.clearCookie('connect.sid');
+            return res.status(200).json("See you soon!");
+          });
+        });
+      } else {
+        return res.sendStatus(304);
+      }
+};
 
-// };
-module.exports = {postUserRegister};
+module.exports = {postUserRegister, postUserLogin, postUserLogout};
